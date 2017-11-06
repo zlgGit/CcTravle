@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cc.travel.com.cctravel.MainActivity">
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.amap.api.maps.MapView>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/title_levle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <android.support.v7.widget.CardView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginRight="-5dp"
+            android:layout_marginTop="-5dp"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/title_first_levle"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/user_profile"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentLeft="true"
+                        android:src="@drawable/user_access"
+                        />
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                    </FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/chat_access"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/chatmsg"
+                        />
+                </RelativeLayout>
+
+                <cc.travel.com.cctravel.MyTabLayout
+                    android:id="@+id/tablayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:tabIndicatorHeight="0dp"
+                    app:tabMode="scrollable"
+                    app:tabPaddingEnd="2dp"
+                    app:tabPaddingStart="-2dp"
+                    app:tabSelectedTextColor="@color/select_yel"
+                    app:tabTextColor="@color/unselect_gray"
+                    >
+                </cc.travel.com.cctravel.MyTabLayout>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <cc.travel.com.cctravel.TransLationView
+        android:id="@+id/tltle_link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_levle"
+        android:layout_margin="4dp"
+        android:visibility="visible">
+    </cc.travel.com.cctravel.TransLationView>
+
+
+
+    <FrameLayout
+        android:id="@+id/bottom_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        >
+    </FrameLayout>
+
+    <cc.travel.com.cctravel.TransBottomView
+        android:id="@+id/user_action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_level"
+        android:layout_alignParentLeft="true">
+    </cc.travel.com.cctravel.TransBottomView>
+    <FrameLayout
+        android:id="@+id/user_action2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_level"
+        android:layout_alignParentLeft="true">
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/user_action"
+        android:layout_alignParentLeft="true"
+        android:src="@mipmap/ic_launcher"
+        />
+
+
+</RelativeLayout>
