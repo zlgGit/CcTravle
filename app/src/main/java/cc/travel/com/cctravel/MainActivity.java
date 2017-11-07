@@ -41,9 +41,6 @@ public class MainActivity extends AppCompatActivity implements MyTabLayout.OnTab
     MyTabLayout mTablayout;
     @BindView(R.id.title_levle)
     LinearLayout mTitleLevle;
-
-    @BindView(R.id.location)
-    ImageView mLocation;
     @BindView(R.id.tltle_link)
     TransLationView mTltleLink;
     @BindView(R.id.bottom_level)
@@ -52,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements MyTabLayout.OnTab
     TransBottomView mUserAction;
     @BindView(R.id.user_action2)
     FrameLayout mUserAction2;
+    @BindView(R.id.location)
+    ImageView mLocation;
     private AMap mMap;
     private String mCurrentTab;
 
@@ -65,18 +64,8 @@ public class MainActivity extends AppCompatActivity implements MyTabLayout.OnTab
         mTablayout.setOnTabClickListener(this);
         mCurrentTab = MyTabLayout.TYPE_KUAICHE;
         MyPostForM myPostForM = new MyPostForM();
-        myPostForM.login("root","root");
-        try {
-            new Thread().join();
-            SharedPreferences sharedPreferences = getSharedPreferences("", Context.MODE_PRIVATE);
-            SharedPreferences.Editor edit = sharedPreferences.edit();
-
-
-
-
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        myPostForM.login("root", "root");
+//
 
     }
 
@@ -86,10 +75,8 @@ public class MainActivity extends AppCompatActivity implements MyTabLayout.OnTab
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.user_access);
 
         int width = bitmap.getWidth();
-
-        Log.i("--直接","直接 width"+width);
-
-        decodeResorce(getResources(),R.drawable.user_access);
+        Log.i("--直接", "直接 width" + width);
+        decodeResorce(getResources(), R.drawable.user_access);
 
     }
 
@@ -153,18 +140,18 @@ public class MainActivity extends AppCompatActivity implements MyTabLayout.OnTab
         }
         mCurrentTab = tab;
     }
-    private Bitmap decodeResorce(Resources resources,int id)
-    {
-        TypedValue typedValue = new TypedValue();
-        resources.openRawResource(id,typedValue);
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inTargetDensity=typedValue.density;
 
-        Log.i("---","density"+typedValue.density);
+    private Bitmap decodeResorce(Resources resources, int id) {
+        TypedValue typedValue = new TypedValue();
+        resources.openRawResource(id, typedValue);
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inTargetDensity = typedValue.density;
+
+        Log.i("---", "density" + typedValue.density);
 
         Bitmap bitmap = BitmapFactory.decodeResource(resources, id);
         int width = bitmap.getWidth();
-        Log.i("---","width"+width);
+        Log.i("---", "width" + width);
         return bitmap;
 
     }
